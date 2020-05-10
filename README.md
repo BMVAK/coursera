@@ -1,4 +1,4 @@
-# CMRIT-suggested-course-answers
+# suggested-course-answers
 it consists answers for the below courses </br>
 
 coueses:</br>
