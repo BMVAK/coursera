@@ -1,0 +1,126 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+
+typedef enum month{ jan, feb, mar, apr, may, jun,jul, aug, sep, oct, nov, dec} month;//initialization of months
+typedef struct date{enum month m; int d;} date;//declaration of structure
+int months;//global declaration for months
+int next_day(month mon,int day)
+{
+    int nday;
+    switch(mon)
+    {
+        case jan:
+        case mar:
+        case may:
+        case jul:
+        case aug:
+        case oct:
+        case dec:if(day<31)
+                   nday=day+1;//incrimenting the day for jan,mar,may,jul,aug,oct,dec months
+                  else if(day==31)
+                  {
+                   nday = 1;
+                   months = mon+1;//incrementing month if it's end of current month
+                  }
+                  break;
+        case feb:if(day<28)
+                  nday=day+1;//incrimenting the day for feb month
+                 else if(day==28)
+                 {
+                     nday = 1;
+                     months = mon+1;//incrementing month if it's end of current month
+                 }
+                 break;
+        case apr:
+        case jun:
+        case sep:
+        case nov:if(day<30)
+                   nday=day+1;//incrimenting the day for apr,jan,sep,nov months
+                  else if(day==30)
+                   {
+                       nday = 1;
+                       months = mon+1;//incrementing month if it's end of current month
+                   }
+                  break;
+        default:printf("please enter correct day");//if not entered a perfect date
+                 nday = 0;
+                 break;
+
+    }
+    if(months==12)
+        months=0;//bringing month to start if it's reaches end
+    return nday;
+}
+void print_date(month mon,int nday)//printng dates
+{
+    if(mon==0)
+        printf("monthe:january day:%d\n",nday);
+    if(mon==1)
+        printf("monthe:february day:%d\n",nday);
+    if(mon==2)
+        printf("monthe:march day:%d\n",nday);
+    if(mon==3)
+        printf("monthe:april day:%d\n",nday);
+    if(mon==4)
+        printf("monthe:may day:%d\n",nday);
+    if(mon==5)
+        printf("monthe:june day:%d\n",nday);
+    if(mon==6)
+        printf("monthe:july day:%d\n",nday);
+    if(mon==7)
+        printf("monthe:august day:%d\n",nday);
+    if(mon==8)
+        printf("monthe:september day:%d\n",nday);
+    if(mon==9)
+        printf("monthe:october day:%d\n",nday);
+    if(mon==10)
+        printf("monthe:november day:%d\n",nday);
+    if(mon==11)
+        printf("monthe:december day:%d\n",nday);
+}
+void main()
+{
+    int nday;
+    struct date dates;
+    //printing current and next date for january 1
+    dates.m = jan;
+    dates.d = 1;
+    printf("current day:");
+    print_date(dates.m,dates.d);
+    nday = next_day(dates.m,dates.d);
+    printf("Next day:");
+    print_date(months,nday);
+    //printing current and next date for february 28
+    dates.m = feb;
+    dates.d = 28;
+    printf("current day:");
+    print_date(dates.m,dates.d);
+    nday = next_day(dates.m,dates.d);
+    printf("Next day:");
+    print_date(months,nday);
+    dates.m = mar;
+    //printing current and next date for march 14
+    dates.d = 14;
+    printf("current day:");
+    print_date(dates.m,dates.d);
+    nday = next_day(dates.m,dates.d);
+    printf("Next day:");
+    print_date(months,nday);
+    //printing current and next date for october 31
+    dates.m = oct;
+    dates.d = 31;
+    printf("current day:");
+    print_date(dates.m,dates.d);
+    nday = next_day(dates.m,dates.d);
+    printf("Next day:");
+    print_date(months,nday);
+    //printing current and next date for december 31
+    dates.m = dec;
+    dates.d = 31;
+    printf("current day:");
+    print_date(dates.m,dates.d);
+    nday = next_day(dates.m,dates.d);
+    printf("Next day:");
+    print_date(months,nday);
+}

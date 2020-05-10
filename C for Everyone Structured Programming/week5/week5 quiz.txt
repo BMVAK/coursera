@@ -1,0 +1,80 @@
+week 5 quiz answers
+
+1.True/False: C is almost a small subset of C++.
+
+true
+false
+
+answer:true
+
+2.In C the code
+printf("\n");
+
+would be replaced by which option in C++?
+
+system.out.println();
+they are the same in C and C++
+cout<<endl;
+
+answer:cout<<endl;
+
+3.Which of these has the same meaning in C++ and C?
+
+main()
+cout
+auto
+
+answer:main()
+
+4.In C++ what allows both member and private functions?
+
+struct
+class
+typedef
+
+answer:class
+
+5.True or False: C compilers can compile C++ code
+true
+false
+
+answer:false
+
+6.True or False: C++ was designed by Dennis Ritchie
+true
+false
+
+answer:false
+
+7.How do you print in C++?
+printf()
+system.out.println()
+cout<<
+
+amswer:cout<<
+
+8.Which of these has different meanings in C++ and C
+cout
+main()
+long
+
+answer:cout
+
+9.In C the code
+printf(“Hello World”);
+
+would be replaced by which option in C++?
+
+cout<<"Hello World";
+cout>>"Hello World";
+it's the same in both languages
+
+answer:cout<<"Hello World";
+
+10.True/False: C++ was invented before C
+true
+false
+
+answer:false
+
+

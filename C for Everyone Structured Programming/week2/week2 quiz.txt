@@ -1,0 +1,136 @@
+week 2 quiz answers
+
+1.In the struct
+struct point{
+double x;
+double y;
+} p1 = { 2.5, 4.0};
+
+2.5
+4.0
+0
+
+answer:2.5
+
+2.If we have pointer
+struct point* ptr = &p1;
+
+With p1 as
+struct point{
+double x;
+double y;
+} p1 = { 2.5, 4.0};
+
+Then ptr->y has the value
+
+2.5
+4.0
+0.0
+
+answer:4.0
+
+3.Which is a basic elementary operation for a stack
+
+slice
+reverse
+empty
+
+answer:empty
+
+4.In the code snippet
+struct point{
+double x;
+double y;
+} p1 = { 4, 4.0};
+printf("%f\n", p1.x);
+
+What gets printed?
+
+4
+4.0
+4.000000
+
+answer:4.000000
+
+5.In the code snippet
+struct point{
+double x;
+double y;
+} p1 = {2.5, 4.0};
+printf("%f\n", p1.x);
+
+What gets printed?
+
+2.500000
+4
+4.000000
+
+answer:2.500000
+
+6.If we have pointer
+struct point* ptr = &p1;
+
+With p1 as
+struct point{
+double x;
+double y;
+} p1;
+
+Then ptr->y has the value
+
+0.0
+NULL
+None of the above
+
+answer:0.0
+
+7.If we have pointer
+struct point* ptr = &p1;
+
+With p1 as
+struct point{
+double x;
+double y;
+} p1{2.5};
+
+Then ptr->x has the value
+
+0
+2.5
+NULL
+
+answer:2.5
+
+8.What operation would you use to add something onto a stack?
+
+push
+pop
+empty
+
+answer:push
+
+9.If we push all the elements of the array int data[20]; onto a stack – the element at the 
+bottom of the stack is
+
+data[0]
+data[19}
+data[10]
+
+answer:data[0]
+
+10.If we have pointer
+struct point* ptr = &p1;
+
+With p1 as
+struct point{
+double x;
+double y;
+} p1{4, p1.x};
+
+Then ptr->y has the value
+
+0
+NULL
+4
+
+answer:4

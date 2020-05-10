@@ -1,0 +1,124 @@
+week 1 quiz answers
+
+1.What is the value of false in the following enum declaration:
+enum fuzzy_logic{ false, true, maybe};
+
+1
+2
+3
+None of the above
+
+answer:None of the above
+
+2.What is the value printed by the following code snippet?
+#include <stdio.h>
+int main()
+{
+    enum month{jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec};
+    enum month next_month(enum month m)
+    {
+        return((m + 1) % 12);
+    }
+    
+    printf("%u\n", next_month(dec));
+    return 0;
+}
+
+0
+1
+12
+
+answer:0
+
+3.If we use an assertion as in
+assert(cond1 && cond2); 
+
+if cond2 is 1 the program keeps running.
+cond2 is not evaluated and the program aborts.
+cond2 is not evaluated and the program keeps running.
+
+answer:if cond2 is 1 the program keeps running.
+
+4.enum fuzzy_logic{ false, true, maybe};
+What is the value of true in the enum declaration?
+
+0
+1
+2
+
+answer:1
+
+5.enum fuzzy_logic{ false, maybe, true};
+What is the value of true in the enum declaration?
+
+0
+1
+2
+
+answer:2
+
+6.If we use an assertion as in
+assert(cond1 || cond2);
+
+if cond2 is 1 program and keeps running
+cond2 is not evaluated and the program aborts
+cond2 is evaluated to see if the program aborts.
+
+answer:if cond2 is 1 the program keeps running.
+
+7.If we use an assertion as in
+assert(cond1 || cond2); 
+
+if cond2 is 1 the program keeps running.
+the program keeps running
+cond2 is evaluated to see if the program aborts.
+
+answer:the program keeps running
+
+8.What is the value printed by the following code snippet?
+#include <stdio.h>
+int main()
+{
+    enum month{jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec}; 
+    enum month get_month(enum month m)
+    {
+        return(m);
+    } 
+    printf("%u\n", get_month(apr));
+    return 0;
+}
+
+1
+2
+3
+
+answer:3
+
+9.What is the value printed by the following code snippet?
+#include <stdio.h>
+int main()
+{
+    enum month{jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec};   
+    enum month next_month(enum month m)
+    {
+        return((m + 1) % 12);
+    }
+    printf("%u\n", next_month(dec + 1));
+    return 0;
+}
+
+1
+2
+3
+
+answer:1
+
+10.If we use an assertion as in
+assert(cond1 && cond2); 
+
+if cond2 is 1 the program keeps running.
+cond2 is not evaluated and the program aborts.
+cond2 is evaluated to see if the program aborts.
+
+answer:cond2 is not evaluated and the program aborts.
+

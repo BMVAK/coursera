@@ -1,0 +1,109 @@
+week 3 quiz answers
+
+1.The C library function malloc()
+
+return a pointer
+sets allocated memory to 0
+frees memory
+
+answer:return a pointer
+
+2.The code
+while(h != NULL) {
+…
+}
+
+Is typical for:
+
+processing a list
+dynamic memory allocation
+manipulating primitive data types
+
+answer:processing a list
+
+3.void concat(list* h1, list* h2)
+as described concatenates two lists. If list h1 has n elements and list h2 has m elements 
+where m > n, then concatenation takes approximately proportional to list lengths
+
+m
+n
+m+n
+
+answer:n
+
+4.A complete binary tree of depth 5 would have
+10 leaf nodes
+5 leaf nodes
+32 leaf nodes
+
+answer:
+32 leaf nodes
+
+5.The code
+void postorder(BTREE root)
+{
+    if (root != NULL) {
+        postorder(root -> left);
+        postorder(root -> right);
+        printf(“%c “, root -> d);
+    }
+}
+
+will cause an infinte loop
+will print the value of the first root
+is recursive
+
+answer:is recursive
+
+6.The C library function calloc()
+sets memory to 0
+frees memory
+has no return value
+
+answer:sets memory to 0
+
+7.The code
+while(h != NULL) {
+…
+}
+
+is not ideal when:
+
+iterating through a list
+manipulating a data structure
+h can never equal to NULL
+
+answer:h can never equal to NULL
+
+8.void concat(list* h1, list* h2)
+as described concatenates two lists. If list h1 has n elements and list h2 has m elements 
+where m < n, then concatenation takes approximately proportional to list lengths
+
+m
+n
+m+n
+
+answer:n
+
+9.A complete binary tree of depth 8 would have
+8
+256
+16
+
+answer:256
+
+10.The code
+void postorder(BTREE root)
+{
+    if (root != NULL) {
+        postorder(root -> left);
+        postorder(root -> right);
+        printf(“%c “, root -> d);
+    }
+}
+
+will manipulate a given BTREE object
+will make no changes to a given BTREE object
+none of the above
+
+answer:will make no changes to a given BTREE object

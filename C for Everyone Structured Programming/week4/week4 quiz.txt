@@ -1,0 +1,96 @@
+week 4 quiz answers
+
+1.To print \ on the screen in printf use
+
+another\
+%/
+%s
+
+answer:another\
+
+2.The second argument of fscanf() is
+
+a pointer to a file
+there isn't a second argument for fscanf()
+a C string thet contains one or more of the following items - whiletspace character, 
+non - white space character and format specifiers.
+
+answer:a C string thet contains one or more of the following items - whiletspace character, 
+       non - white space character and format specifiers.
+
+3.In the code
+while(fscanf(ptr,”%d”,&d[*size]) == 1)
+
+Which conditions will terminate the while loop?
+
+the file pointer to by ptr is NULL
+fscanf reaches the end of the file pointed to by ptr
+all of the above
+
+answer:fscanf reaches the end of the file pointed to by ptr
+
+4.What is the value of argc for the command line arguments
+
+./a.out file-in file-out
+
+1
+2
+3
+
+answer:3
+
+5.Which statement will print "\n" to the screen?
+
+printf("\\n");
+printf(\n);
+printf("\n");
+
+answer:printf("\\n");
+
+6.What comes after the second argument of fscanf()?
+
+there is no second argument for fscanf()
+any necessary values to be submitted info format specifiers in the second argument
+a pointer to a file
+
+answer:any necessary values to be submitted info format specifiers in the second argument
+
+7.-1 represents which value?
+
+end of a string
+a tab space
+end of file(EOF)
+
+answer:end of file(EOF)
+
+8.Is the value
+ in
+
+withw a declaration of
+FILE* in;
+
+a valid first argument for scanf?
+
+yes, becuase it is a pointer to a file
+np, becuase it is not a file but rather a pointer to a file
+no, becuase fscaf takes in no arguments
+
+answer:yes, becuase it is a pointer to a file
+
+9.To print %d on the screen use
+printf("%d");
+printf("\%d");
+printf("%%d");
+
+answer:printf("%%d");
+
+10.The value of argc for the command line statement
+
+./a.out in out reversed capitalized
+
+6
+5
+4
+
+answer:5
+

@@ -1,0 +1,114 @@
+#include<stdio.h>
+#include<malloc.h>
+#include<stdlib.h>
+#include<ctype.h>
+//creation of structure
+struct node{
+int data;
+struct node *next;
+}*start=NULL,*newnode,*temp,*a = NULL,*b = NULL,*c = NULL,*e = NULL,*tmp = NULL;//assigning pointers to structures
+//start of main function
+int main()
+{
+ int num,i,count;
+ for(i=0;i<100;i++)
+ {
+     temp = start;
+     num = rand()%999;//to generate random number using rand function
+     newnode=(struct node*)malloc(sizeof(struct node));//to create new node
+     newnode->data=num;
+     if(start==NULL)//if start is NULL then assign to created new node
+     {
+	 newnode->next=NULL;
+	 start=newnode;
+     }
+     else
+     {
+	 while(temp->next!=NULL)//newly created node is assigned to new node which points to NULL
+	    temp=temp->next;
+	 newnode->next=NULL;
+	     temp->next=newnode;
+     }
+ }
+
+ if(start==NULL)//to print assigned values in linked list before sorting
+    printf("List is Empty\n");
+ else
+ {
+     printf("Before Sorting:\n");
+     count=0;
+     for(temp=start;temp->next!=NULL;temp=temp->next)
+     {
+	printf("%d---->",temp->data);
+	count++;
+	if(count%5==0)
+	 printf("\n");
+     }
+     if(temp->next==NULL)
+     {
+	 printf("%d---->NULL(end)\n",temp->data);
+	 count++;
+	 if(count%5==0)
+	  printf("\n");
+     }
+ }
+
+ while(e != start->next)//sorting of assigned values using bubble sort
+    {
+     c = a = start;
+     b = a->next;
+     while(a != e)
+     {
+      if(a->data > b->data)
+      {
+	if(a == start)
+	{
+	 tmp = b -> next;
+	 b->next = a;
+	 a->next = tmp;
+	 start = b;
+	 c = b;
+	}
+	else
+	{
+	 tmp = b->next;
+	 b->next = a;
+	 a->next = tmp;
+	 c->next = b;
+	 c = b;
+	}
+      }
+      else
+      {
+	c = a;
+	a = a->next;
+      }
+    b = a->next;
+    if(b == e)
+      e = a;
+    }
+ }
+
+ if(start==NULL)//to print assigned values in linked list after sorting
+    printf("List is Empty\n");
+ else
+ {
+     printf("After Sorting:\n");
+     count=0;
+     for(temp=start;temp->next!=NULL;temp=temp->next)
+     {
+	  printf("%d---->",temp->data);
+      count++;
+	  if(count%5==0)
+      printf("\n");
+     }
+     if(temp->next==NULL)
+     {
+	 printf("%d---->NULL(end)\n",temp->data);
+	 count++;
+	 if(count%5==0)
+	  printf("\n");
+     }
+ }
+ return 0;
+}

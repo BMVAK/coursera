@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include<stdlib.h>
+#include<malloc.h>
+void main()//main function
+{
+    int *arr;//declaration for dynamic array
+    int i,j,n,sum=0,temp,max;//declaration of variables used in program
+    double avg;
+    FILE *myFile,*yourFile;//declaration of file pointers
+
+    /*before executing this file make sure that a file name called
+      somenunbers.txt is created by your own and include integers 4 9 11 12 15
+      into the file then after execute this program and don't create the file called
+      answer-hw3.txt as this file is created by the program itself at end in the
+      same directory where this program is being executed.*/
+
+    myFile = fopen("somenumbers.txt", "r");//opening file called somenumbers.txt
+    yourFile = fopen("answer-hw3.txt", "w");//opening file called answer-hw3.txt
+
+    fscanf(myFile, "%d", &n);//scanning 1st element of the file
+    arr=(int *)malloc(n*sizeof(int));//creation of dynamic array
+    for(i=0;i<n;i++)
+        fscanf(myFile, "%d", &arr[i]);//scanning remaining contents of the file
+
+    for(i=0;i<n;i++)
+       sum+=arr[i];//summation of n numbers read from the file
+
+    for(i=0;i<n;i++)
+        for(j=i+1;j<n;j++)
+        {
+            if(arr[i]>arr[j])//sorting numbers to find maximum
+            {
+                temp=arr[i];
+                arr[i]=arr[j];
+                arr[j]=temp;
+            }
+        }
+    avg=(double)sum/n;//calculating average of the numbers
+    max=arr[n-1];//maximum of numbers after sorting stored in last index
+
+    fprintf(yourFile, "Average of %d numbers = %f \n",n,avg);//writing calculated average into another file
+    fprintf(yourFile, "Maximum of %d numbers = %d \n",n,max);//writing maximum of numbers into another file
+
+    printf("Average of %d numbers = %f\nMaximum of %d numbers = %d\n",n,avg,n,max);//printing out my calculation
+    printf("file called answer-hw3.txt is created in this directory!\n");
+    printf("Please check the file for output!! thankyou\n\n\n");
+
+    /*one file is created and this output is written into the file
+      name called answer-hw3.txt which you will found in  current diectory*/
+    fclose(myFile);//closing opened file
+    fclose(yourFile);//closing opened file
+}
