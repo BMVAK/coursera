@@ -1,0 +1,125 @@
+week 5 quiz answers based on week 5 programming assignmnet
+
+1.Does your program correctly respond to mouse clicks and mouse hovers, as described in the 
+project assignment write up? This should include the following behaviors (test them now):
+
+* When I city or earthquake is hovered over, information should be displayed about that city or
+earthquake. Test this by hovering over several cities and earthquakes now.
+* It should never be the case that information for more than one item is displayed at the 
+same time. Test this last point explicitly by hovering over two nearby cities or earthquakes, and a 
+city next to an earthquake.
+* If all earthquakes and cities are displayed, when you click on an earthquake, all other 
+earthquakes should be hidden and all cities except those in the threat circle should be 
+hidden. Test this by clicking on an earthquake now.
+* If earthquakes or cities are hidden, clicking anywhere should re-display all earthquake and 
+city markers. Test this by clicking somewhere now. Try to test clicking on where a hidden 
+earthquake is to make sure it's not selected.
+* If all earthquakes and cities are displayed, when you click on a city, all other cities should be 
+hidden and all earthquakes except those that affect the city (city is in their threat circle) 
+should be hidden. Test this by clicking on a city that has some nearby earthquakes now.
+* If you click on no marker and everything is already displayed, nothing should happen. Test 
+this now.
+
+Your response:
+
+yes
+no
+
+answer:yes
+
+2.Select the classes that are the direct subclasses of (i.e. directly extend) the class 
+CommonMarker in module 5 programming assignment (when the assignment is complete). 
+Check all that apply.
+
+EarthquakeMarker
+CityMarker
+LandQuakeMarker
+OceanQuakeMarker
+SimplePointMarker
+
+answer:EarthquakeMarker
+       CityMarker
+
+3.What caused the bug in the starter code when you modified CityMarker to extend 
+CommonMarker instead of SimplePointMarker?
+
+CommonMarker cannot be extended because it is an abstract class
+CityMarker did not implement the drawMarker method, which is abstract in CommonMarker
+The body of the showTitle method in CityMarker was empty
+The header in CityMarker needed to say "implements CommonMarker" instead of "extends CommonMarker"
+
+answer:CityMarker did not implement the drawMarker method, which is abstract in CommonMarker 
+
+4.What common functionality does CommonMarker implement for its subclasses? In other 
+words, what functionality is inherited by subclasses (not overrided) and used either by users 
+of subclass objects or by the subclass itself?
+
+The setClicked method that allows the user to set the "clicked" state of the marker
+The draw method
+The drawMarker method that draws the details of the marker
+The showTitle method that displays the marker's text
+
+answer:The setClicked method that allows the user to set the "clicked" state of the marker
+       The draw method
+
+5.Where are the variables mouseX and mouseY, which you used in the method 
+selectMarkerIfHover, declared?
+
+They are member variables of the PApplet class and are inherited by EarthquakeCityMap
+They are member variables explicitly declared in EarthquakeCityMap
+They are local variables declared in selectMarkerIfHover
+They are parameters passed to selectMarkerIfHover
+
+answer:They are member variables of the PApplet class and are inherited by EarthquakeCityMap
+
+6.In which class(es) is the code that actually draws the text label (i.e. the call to the PGraphics 
+text(...) method) next to the city markers and earthquake markers located? Select ALL that 
+apply.
+
+EarthquakeCityMap
+CommonMarker
+CityMarker
+EarthquakeMarker
+LandQuakeMarker
+OceanQuakeMarker
+
+answer:CityMarker
+       EarthquakeMarker
+
+7.Consider the following code, which might be used as a helper method in the mouseClicked 
+method for this programming assignment. This method is supposed to do the following:
+
+* If lastClicked is not null, it should abort the method.
+* Otherwise it should check all of the cities for a click.
+* If it finds a city that has been clicked and that city is not hidden and that city is the first one it finds to be clicked, it sets lastClicked to be that city's marker
+* It then sets the rest of the cities to be hidden.
+* If there is no city clicked, it does nothing to the city markers.
+
+private void checkCitiesForClick()
+{
+    if (lastClicked != null) 
+        return;
+    for (Marker marker : cityMarkers) 
+    {
+        if (!marker.isHidden() &&
+            marker.isInside(map, mouseX, mouseY) &&
+            lastClicked == null)
+        {
+            lastClicked = (CommonMarker)marker;
+        }
+        else {
+            marker.setHidden(true);
+        }
+    }
+   
+}
+
+Does this code have a bug, and if so, what is it?
+
+There is no bug
+If no city is clicked, this code will hide all the cities
+This code can potentially select more than one city, and making it so that more than one city remains unhidden
+This code can potentially select a hidden city
+It will run the loop to check the cities for a click even if lastClicked is not equal to null
+
+answer:If no city is clicked, this code will hide all the cities

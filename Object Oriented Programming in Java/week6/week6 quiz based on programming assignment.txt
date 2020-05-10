@@ -1,0 +1,145 @@
+week 6 quiz answers based on week 6 programming assignment
+
+1.Which of the following is a requirement for using the binary search algorithm to find an item 
+in an array?
+
+The array must be in sorted order
+The array must contain either ints or Strings
+The array must have more than 2 elements in it
+None of the above is a requirement of binary search
+
+answer:The array must be in sorted order
+
+2.The following code implements binary search. Choose the option that correctly 
+fills in the missing line of code: 
+
+public static boolean binarySeach(int[] toSearch, int toFind)
+{
+    int low = 0;
+    int high = toSearch.length - 1;
+    int mid;
+    while ( << INSERT ANSWER CODE HERE >> )
+    {   
+        mid = low + ((high-low)/2);
+        if (toFind < toSearch[mid]) {
+            high = mid-1;
+        }
+        else if (toFind > toSearch[mid]) {
+            low = mid+1;
+        }
+        else return true;
+    }
+    return false;
+}
+
+high>=low
+low < high
+mid >= low
+found == false
+
+answer:high>=mid
+
+Consider the following ordering of integers in an array:
+8 , 12 , 45 , 58 , 22 , 18 , 43 , 30
+
+Which of the following sorting algorithms could have produced this array above after 3 
+iterations of its outer loop?
+
+Insertion Sort 
+Selection Sort
+Both Insertion and Selection Sort
+Neither Insertion nor Selection Sort
+
+4.True or false: Selection sort is faster when the elements in the array are already sorted than 
+when they are unsorted.
+
+true
+false
+
+answer:false
+
+5.True or false: Insertion sort as we examined in (i.e. mystery sort) is faster when the elements 
+in the array are already sorted than when they are unsorted.
+
+true
+false
+
+answer:true
+
+6.Which of the following correctly implements the compareTo method in EarthquakeMarker so 
+that earthquakes are sorted from highest magnitude to lowest magnitude?
+
+You don't need to implement compareTo in EarthquakeMarker. This is the default sorting 
+behavior for EarthquakeMarkers
+
+public boolean compareTo(EarthquakeMarker m)
+{
+    if (this.getMagnitude() > m.getMagnitude()) 
+        return true;
+    else
+        return false;
+}
+
+public int compareTo(EarthquakeMarker m1, EarthquakeMarker m2)
+{
+    if (m1.getMagnitude() > m2.getMagnitude()) 
+        return 1;
+    else if (m1.getMagnitude < m2.getMagnitude())
+        return -1;
+    else:
+        return 0;
+}
+
+public int compareTo(EarthquakeMarker m)
+{
+    if (m.getMagnitude() < this.getMagnitude())
+        return -1;
+    else if (this.getMagnitude() < m.getMagnitude())
+        return 1;
+    else
+        return 0;
+}
+
+public int compareTo(EarthquakeMarker m)
+{
+    if (this.getMagnitude() < m.getMagnitude()) 
+        return -1;
+    else if (this.getMagnitude() > m.getMagnitude())
+        return 1;
+    else
+        return 0;
+}
+
+answer:public int compareTo(EarthquakeMarker m)
+       {
+           if (m.getMagnitude() < this.getMagnitude())
+               return -1;
+           else if (this.getMagnitude() < m.getMagnitude())
+               return 1;
+           else
+               return 0;
+       }
+
+7.Run your program with the earthquake input file "quiz2.atom". There is a commented out line 
+of code in the setUp method in EarthquakeCityMap that you can uncomment to make this 
+happen:
+earthquakesURL = "quiz2.atom";
+Call sortAndPrint as appropriate to answer the following question.
+
+What is the magnitude of the 6th earthquake printed (i.e. the 6th strongest earthquake)? To 
+be clear, if there are two earthquakes of the same magnitude, each magnitude will count. For 
+example, if the top 4 magnitudes are {7, 6.9, 6.9, and 6}, the 4th largest is 6.
+
+answer:6.4
+
+8.Run your program with the earthquake input file "quiz2.atom". There is a commented out line 
+of code in the setUp method in EarthquakeCityMap that you can uncomment to make this 
+happen:
+earthquakesURL = "quiz2.atom";
+Call sortAndPrint as appropriate to answer the following question.
+
+What is the strongest magnitude that is repeated three or more times in the data set?
+
+answer:5.9
+
+

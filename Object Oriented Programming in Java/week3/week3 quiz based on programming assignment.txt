@@ -1,0 +1,46 @@
+week 3 quiz based on week 3 programming assignment
+
+1.Does your map display dozens of earthquake markers, with different colors and sizes 
+indicating the strength of each earthquake that seem to make sense?
+
+yes
+not yet...
+
+answer:yes
+
+2. Does your map display a key that shows an explanation of each type of earthquake marker, 
+and is that key neatly organized, such as in the image below?
+
+yes
+not yet...
+
+answer:yes
+
+3.Which class do you create objects of to display the earthquake "dots" on the map?
+
+SimplePointMarker
+PointFeature
+Marker
+earthquakes
+
+answer:SimplePointMarker
+
+4.Assume you have a SimplePointMarker stored in the variable marker. Which of the following 
+lines of code will set that marker's color to red?
+
+marker.setColor(255);
+marker.setColor(color(255, 0, 0));
+marker.setColor(255, 0, 0);
+
+answer:marker.setColor(color(255, 0, 0));
+
+5.How many different SimplePointMarker objects does your program create when you run it?
+
+One for each PointFeature in earthquakes
+100
+1
+
+answer:One for each PointFeature in earthquakes
+
+
+
