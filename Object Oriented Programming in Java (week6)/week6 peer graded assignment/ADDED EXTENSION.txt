@@ -1,0 +1,26 @@
+//additional work added for open end assignment
+//this code is already added in UCSDUnfoldingMaps\module6 EarthquakeMap.java no need to add again
+	public void keyPressed() {
+		if(key=='1' || key=='2' || key=='3' || key=='4' || key=='5' || key=='6' || key=='7' || key=='8' || key=='9')
+		{
+			for(Marker marker: quakeMarkers)
+			{
+				EarthquakeMarker m = (EarthquakeMarker) marker;
+				if(m.getMagnitude() > Character.getNumericValue(key) && m.getMagnitude() < Character.getNumericValue(key) + 1)
+				{
+					marker.setHidden(false);
+				}
+				else
+				{
+					marker.setHidden(true);
+				}
+			}
+		}
+		else if(key=='0')
+		{
+			for(Marker marker: quakeMarkers)
+			{
+				marker.setHidden(false);
+			}
+		}
+	}
